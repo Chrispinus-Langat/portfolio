@@ -11,6 +11,9 @@
     <body>
     <div id="header">
         <div class="container">
+            <div class="page" id="home">
+                
+            
             <nav>
       <!----------sidebar---->
 <div class="container">
@@ -57,11 +60,10 @@
                 </h1>
             </div>
         </div>
-
+      </div>
     </div>
-   
-
-    <!-------about section--------->
+   <!-------about section--------->
+ <div class="page" id="about">            
     <div id="about">
         <div class="container">
             <div class="row">
@@ -107,8 +109,10 @@
                 </div>
             </div>
         </div>
+     </div>
     </div>
   <!--------services section------->
+  <div class="page" id="services">
   <div id="services">
     <div class="container">
         <h1 class="sub-title" class="readable">My services</h1>  
@@ -166,12 +170,13 @@
                 </p>
                 <button class="toggle-btn">Read More</button>
             </div>
-
         </div>
+      </div>
     </div>
   </div>
 
   <!---------portfolio---------->
+  <div class="page" id="portfolio">              
 <div id="portfolio">
     <div class="container">
         <h1 class="sub-title">My work</h1>
@@ -204,9 +209,10 @@
         </div>
         <a href="#" class="btn">See more</a>
     </div>
+   </div>
 </div>
 <!--------contact------------->
-
+<div class="page" id="contact">
     <section id="contact">
         <div class="contact-container">
             <div class="contact-left">
@@ -232,8 +238,13 @@
             </div>
         </div>
     </section>
+</div>
 
-
+<div class="nav-bar">
+    <button onclick="navigate('prev')">Prev</button>
+    <button onclick="navigate('home')">Home</button>
+    <button onclick="navigate('next')">Next</button>
+</div>
 
   <!----------script.js------------>
    
@@ -395,4 +406,34 @@
     // Add active class to clicked tab
     event.currentTarget.classList.add("active-link");
 }
+
+
+let pages = document.querySelectorAll(".page");
+let currentPageIndex = 0;
+
+// Function to update page visibility
+function updatePageVisibility() {
+    pages.forEach((page, index) => {
+        page.style.display = (index === currentPageIndex) ? "block" : "none";
+    });
+}
+
+// Function to navigate pages
+function navigate(direction) {
+    if (direction === "next" && currentPageIndex < pages.length - 1) {
+        currentPageIndex++;
+    } else if (direction === "prev" && currentPageIndex > 0) {
+        currentPageIndex--;
+    } else if (direction === "home") {
+        currentPageIndex = 0; // Ensures home is visible only when clicking Home
+    }
+
+    updatePageVisibility(); // Ensures only the active page is displayed
+}
+
+// Initialize first page as visible
+document.addEventListener("DOMContentLoaded", () => {
+    updatePageVisibility();
+});
+
 </script>
