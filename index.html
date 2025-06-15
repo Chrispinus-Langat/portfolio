@@ -193,7 +193,7 @@
                 </div>
             </div>
             <div class="work">
-                <img src="images/pnst.jpg">
+                <img src="images/pnst.jpg" >
                 <div class="layer">
                     <h3>Online Shopping App </h3>
                     <p>The App Connects you to the talented people around the world,download it from play store</p>
@@ -375,5 +375,24 @@
             });
         }
     });
+    function opentab(tabname) {
+    let tabContents = document.querySelectorAll(".tab-contents");
+    let tabLinks = document.querySelectorAll(".tab-links");
+
+    // Hide all tab contents
+    tabContents.forEach(content => {
+        content.style.display = "none";
+    });
+
+    // Remove active class from all tab links
+    tabLinks.forEach(link => {
+        link.classList.remove("active-link");
+    });
+
+    // Show the selected tab content
+    document.getElementById(tabname).style.display = "block";
+
+    // Add active class to clicked tab
+    event.currentTarget.classList.add("active-link");
+}
 </script>
-        
