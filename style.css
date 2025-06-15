@@ -346,7 +346,7 @@ padding: 10px 0;
     gap: 20px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 800px) {
     .contact-container {
         grid-template-columns: 1fr; /* Single column on smaller screens */
     }
