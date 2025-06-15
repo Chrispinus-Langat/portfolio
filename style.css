@@ -128,9 +128,12 @@ nav ul li a:hover::after{
     color: chartreuse;
     font-size: 14px;
 }
-.tab-contents{
+
+.tab-contents {
     display: none;
+    transition: all 0.3s ease-in-out;
 }
+
 .tab-contents.active-tab{
     display: block;
 }
@@ -431,6 +434,19 @@ button:hover {
     padding: 10px;
     cursor: pointer;
     width: 100%;
+}
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+
+  .container {
+    width: 90%;
+    padding: 10px;
+  }
+}
+.container {
+  width: 80vw; /* 80% of the viewport width */
 }
 
 
