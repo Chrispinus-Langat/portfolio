@@ -448,5 +448,18 @@ button:hover {
 .container {
   width: 80vw; /* 80% of the viewport width */
 }
+.page {
+    display: none; /* Hide all pages initially */
+}
+
+.page:first-of-type {
+    display: block; /* Show only the first page */
+}
+
+
+.page.active {
+    display: block;
+}
+
 
 
